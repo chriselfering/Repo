@@ -1,0 +1,52 @@
+
+.body {
+  background-color: aquamarine;
+  font-family: verdana;
+
+}
+
+.title {
+  font-size: 5vw;
+  font-family: helvetica;
+  position: relative;
+  text-align: center;
+}
+
+.link0 {
+  background-color: peachpuff;
+  margin: 0px auto;
+}
+
+.link1 {
+  display: inline-block;
+  padding-left: 10%;
+  padding-right: 10%;
+  text-align: center;
+}
+
+.link2 {
+  display: inline-block;
+  padding-left: 10%;
+  padding-right: 10%;
+  text-align: center;
+}
+
+.body1 {
+  display: inline-block; ;
+  background-color: white;
+  border: solid;
+  padding-left: 20px;
+}
+
+.body2 {
+  margin-left: 20px;
+}
+
+.float {
+  float:left;
+  max-width: 35%;
+}
+
+.relative {
+  max-width: 100%;
+}
