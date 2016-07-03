@@ -1,0 +1,14 @@
+.padding1 {
+  padding-left: 30px;
+}
+
+.padding2 {
+  padding-left: 60px;
+}
+
+.inline {
+  display: inline-block;
+  vertical-align: top;
+  padding-left: 40px;
+
+}
