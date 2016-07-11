@@ -4,20 +4,20 @@
 //   }
 // }
 // tripleFive()
-
+//
 // function lastLetter (string) {
 //
 //   console.log (string.slice(-1));
 //   return string.slice(-1) //return is important when you want to store the value
 // }
 // lastLetter('hello')
-
+//
 // function square (num) {
 //   return num * num;
 //   // return Math.pow(num, 2)
 // }
 // ('2')
-
+//
 // function negate (num) {
 //   return -num;
 // }
@@ -36,8 +36,13 @@
 // // function ('armadillo')
 // }
 // startsWithA('armadillo')
-
-function getSeconds (time) {
-  var timeSplitter = time.split(':')
-  return Number(timeSplitter[0])*60 + Number(timeMaster[1])
-}
+//
+// function getSeconds (time) {
+//   var timeSplitter = time.split(':')
+//   return Number(timeSplitter[0])*60 + Number(timeMaster[1])
+// }
+//
+// function excite (word){
+//   return word + '!!!'
+// }
+// console.log(excite('Hello'))
