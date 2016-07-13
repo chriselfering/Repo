@@ -7,12 +7,23 @@
   <script type="text/javascript" src="main.js"></script>
 
 </head>
-  <body ng-controller='craigTheController'>
+  <body>
+    <!-- <div ng-controller="craigTheController" ng-init="rangers=['Red Ranger', 'Blue Ranger', 'White Ranger', 'Green Ranger']">
   <h1>!!! --- {{ greeting }} --- !!!</h1>
   <h3 ng-bind="subGreeting"></h3>
 
-  <button ng-click='fightPutty()'>Fight Putty</button>
+  <button ng-click='fightPutty()'>Fight Putty</button> -->
 
-
+  <!-- <p> {{ rangers[0] }} </p> -->
+    </div>
+    <div ng-controller="betaCtrl as beta">
+  <p> {{ beta.beans }} </p>
+  <input type="text" placeholder="Favorite Beans" ng-model="beta.myFavoriteBeans">
+  <button ng-click="beta.addBeans()">Add Beans</button>
+  <p ng-repeat="beans in beta.myFavoriteBeans">
+    {{ beans }}
+  </p>
+  <button ng-click="beta.removeLastBeans()">Remove Last Beans</button>
+    </div>
   </body>
 </html>

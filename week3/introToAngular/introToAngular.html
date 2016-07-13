@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app='mod1'>
+<html ng-app='app'>
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular.js"></script>
 <script type="text/javascript" src="main.js"></script>
@@ -8,9 +8,33 @@
     <meta charset="utf-8">
     <title>Intro to Angular!!!</title>
   </head>
-  <body ng-controller = 'ctrl1'>
+  <body>
+
+  <div ng-contoller = 'ctrlConsole'>
+    <button ng-click = '$log.log(consoleMessage)'>Click me for a nice console log message!</button>
+  </div>
+
+    <!-- Greeting swap button -->
+  <div ng-controller = 'ctrl1'>
     <h1>{{ greeting }}</h1>
-    <button ng-click ='clickFunction()'>Click Me!</button>
-    <button ng-click = 'clickList()'>Click me next!</button>
+      <button ng-click ="clickFunction()">Click me to change the greeting!</button>
+  </div>
+      <!-- list Controller -->
+    <div ng-controller="ctrlList">
+        <div><button ng-click="showAlert()">Click me for a beautiful list!</button></div>
+        <div><div ng-show="myList" >
+          <ul><h3>My favorite things</h3>
+              <li>Bacon</li>
+              <li>Pizza</li>
+              <li>Angular!</li>
+          </ul>
+    </div>
+</div>
+
+<div ng-controller = 'ctrlMouse'>
+  <div ng-mouseenter = 'hoverIn()' ng-mouseleave = 'hoverOut()'>
+    <p>Hodor, hodor. Hodor. Hodor, hodor hodor. Hodor! Hodor hodor, hodor - hodor hodor hodor hodor. Hodor. Hodor hodor HODOR! Hodor hodor; hodor hodor, hodor. Hodor hodor, hodor, hodor hodor. Hodor hodor - hodor hodor HODOR hodor, hodor hodor, hodor, hodor hodor.</p>
+  </div>
+</div>
   </body>
 </html>
