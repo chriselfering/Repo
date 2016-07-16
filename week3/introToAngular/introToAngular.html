@@ -8,21 +8,26 @@
     <meta charset="utf-8">
     <title>Intro to Angular!!!</title>
   </head>
+  <style type="text/css">
+    .changeColor {
+      color: pink;
+    }
+  </style>
   <body>
 
-  <div ng-contoller = 'ctrlConsole'>
-    <button ng-click = '$log.log(consoleMessage)'>Click me for a nice console log message!</button>
+  <div ng-controller="ctrlConsole">
+    <button ng-click="logGreeting()">Click me for a nice console log message!</button>
   </div>
 
     <!-- Greeting swap button -->
-  <div ng-controller = 'ctrl1'>
+  <div ng-controller="ctrl1">
     <h1>{{ greeting }}</h1>
-      <button ng-click ="clickFunction()">Click me to change the greeting!</button>
+      <button ng-click="clickFunction()">Click me to change the greeting!</button>
   </div>
       <!-- list Controller -->
     <div ng-controller="ctrlList">
         <div><button ng-click="showAlert()">Click me for a beautiful list!</button></div>
-        <div><div ng-show="myList" >
+        <div><div ng-show="myList">
           <ul><h3>My favorite things</h3>
               <li>Bacon</li>
               <li>Pizza</li>
@@ -31,10 +36,13 @@
     </div>
 </div>
 
-<div ng-controller = 'ctrlMouse'>
-  <div ng-mouseenter = 'hoverIn()' ng-mouseleave = 'hoverOut()'>
+<div>
+  <div ng-class="{changeColor: hover}" ng-mouseenter="hover = true" ng-mouseleave="hover = false">
     <p>Hodor, hodor. Hodor. Hodor, hodor hodor. Hodor! Hodor hodor, hodor - hodor hodor hodor hodor. Hodor. Hodor hodor HODOR! Hodor hodor; hodor hodor, hodor. Hodor hodor, hodor, hodor hodor. Hodor hodor - hodor hodor HODOR hodor, hodor hodor, hodor, hodor hodor.</p>
   </div>
 </div>
+
+<!-- <link rel="stylesheet" href="#" ng-click="confirm">Click on this link!</link> -->
+
   </body>
 </html>

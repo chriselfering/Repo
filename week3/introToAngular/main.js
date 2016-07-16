@@ -2,14 +2,14 @@ angular.module('app', [])
 
 //Console Log button
 angular.module('app')
-  .controller('ctrlConsole',
-    consoleCtrl
-  )
-
-    function consoleCtrl($scope, $log){
-      $scope.$log = $log;
-      $scope.consoleMessage = 'Hello there pikachu!'
+  .controller('ctrlConsole', [
+    '$scope', consoleCtrl
+  ])
+    function consoleCtrl($scope){
+      $scope.logGreeting = function() {
+        console.log("How are you Pikachu?")
       }
+    };
 
 // greeting button
 angular.module('app')
@@ -31,17 +31,27 @@ angular.module('app')
 
     function listCtrl($scope) {
       $scope.myList = false;
-      $scope.showAlert = function(){
+      $scope.showAlert = function() {
         $scope.myList = true;
       };
     }
 
-//mouse hover
-angular.module('app')
-  .controller('ctrlMouse', [
-    '$scope', mouseCtrl
-  ])
+//exclamation button
+// angular.module('app')
+//   .controller('ctrlExcl', [
+//     '$scope', exclControl
+//   ])
+//
+//   function exclControl($scope) {
+//     $scope.exclaim =
+//   }
 
-    function mouseCtrl($scope) {
-  
-    };
+//confirm link
+// angular.module('app')
+//   .controller('ctrlLink', [
+//     '$scope', linkCtrl
+//   ])
+//
+//   function linkCtrl($scope) {
+//     $scope.confirm
+//   }

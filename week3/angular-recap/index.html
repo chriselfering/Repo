@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html ng-app="WeddingBells">
+  <head>
+    <meta charset="utf-8">
+    <title>Angular Recap</title>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <link rel="stylesheet" src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular.js"></script>
+    <link rel="stylesheet" src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js">
+    <script type="text/javascript" src="js/main.js"></script>
+  </head>
+  <body class="container">
+    <section ng-controller="ballAndChain as love">
+      <h1>U.S. Divorce Rates</h1>
+      <table class="table table-striped" ng-repeat="couple in love.info">
+
+        <thead>
+          <th>Year</th>
+          <th></th>
+        </thead>
+        <tbody>
+
+        </tbody>
+        <tfoot>
+
+        </tfoot>
+      </table>
+    </section>
+  </body>
+</html>
