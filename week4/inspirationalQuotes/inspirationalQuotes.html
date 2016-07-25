@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html ng-app="QuoteMe">
+    <head>
+        <title>Inspirational Quotes</title>
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.css">
+    	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular.js"></script>
+        <script src="app.js"></script>
+        <style>
+            ul {
+                list-style: none;angular.module('QuoteMe', [])
+    .controller('Quotes', Quotes)
+    .factory('QuoteFactory', QuoteFactory)
+
+Quotes.$inject = ['QuoteFactory']
+
+function Quotes(QuoteFactory) {
+    console.info('Quotes Controller:loaded')
+
+    var quotes = this
+
+    quotes.author = '' // this is the value of the input
+    quotes.selectedAuthor = '' // this is the value of the currently clicked author
+    quotes.text = '' // this is the value of textarea
+    quotes.list = QuoteFactory.quotes
+    quotes.rating = 0;
+
+    quotes.addQuote = function() {
+        console.debug('Hey maaaan, you toally clicked submit duuude');
+
+        if( quotes.author && quotes.text ) { // fully cross-browser
+            QuoteFactory.quotes.push({
+                author: quotes.author,
+                text: quotes.text,
+                rating: quotes.rating
+            })
+        }
+        console.debug(QuoteFactory.quotes)
+
+        quotes.author='' // because of data binding, this will clear the form value for the input
+        quotes.text=''   // because of data binding, this will clear the form value for the textarea
+    }
+
+    quotes.burninate = function (quote) {
+        var index = quotes.list.indexOf(quote)
+
+        if( index !== -1 ) {
+            quotes.list.splice(index,1)
+        }
+    }
+
+    quotes.filterAuthor = function(author) {
+        console.debug(author)
+        quotes.selectedAuthor = author;
+    }
+}
+
+function QuoteFactory() {
+    // localStorage.setItem('quotes', JSON.stringify(quotes))
+    // try/catch
+    // JSON.parse(localStorage.getItem('quotes'))
+
+    return {
+        quotes: [{
+            author: 'Shakespeare',
+            text: 'To be or not to be.',
+            rating: 3
+        }, {
+            author: 'Mr. T',
+            text: 'I pity the fool!',
+            rating: 5
+        },{
+            author: 'TaterGuy',
+            text: 'I like taters',
+            rating: 4
+        }]
+    }
+}
+                padding: 0;
+            }
+            blockquote:before,
+            blockquote:after {
+                content: '"'
+            }
+            .author {
+                font-size: 16px;
+                padding-left: 20px;
+                cursor: pointer;
+            }
+            .author:hover {
+                color: chartreuse
+            }
+        </style>
+    </head>
+    <body ng-controller="Quotes as quotes" ng-submit="quotes.addQuote()">
+        <form>
+            <input required class="form-control" type="text" placeholder="Author" ng-model="quotes.author">
+            <textarea required class="form-control" ng-model="quotes.text" placeholder="Add an awesome quote!"></textarea>
+            <label>Rating</label>
+            <select ng-options="rating for rating in [1,2,3,4,5]" ng-model="quotes.rating">
+                <option selected>Rating</option>
+            </select>
+            <button>Submit</button>
+        </form>
+        <ul>
+            <li ng-repeat="quote in quotes.list | filter: quotes.selectedAuthor | orderBy: 'rating'">
+            <!-- <li ng-repeat="quote in quotes.list"> -->
+                <div class="jumbotron">
+                    <!-- <a href="/#/author">{{ quote.author }}</a> -->
+                    <blockquote>
+                        {{ quote.text }}
+                    </blockquote>
+                    <p class="author" ng-click="quotes.filterAuthor(quote.author)">-- <i>{{ quote.author }}</i></p>
+                    <p>Rating: {{ quote.rating }}</p>
+                    <button type="button" ng-click="quotes.burninate(quote)">Burninate</button>
+                </div>
+            </li>
+        </ul>
+    </body>
+</html>
