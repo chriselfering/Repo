@@ -23,24 +23,24 @@ function dungeonFactory (){
     }
 
     // Normal Syntax
-    // function Room(roomInfo){
-    //     this.description = roomInfo.description;
-    //     this.items   = roomInfo.items;
-    //     this.monster = roomInfo.monster;
-    //     this.player  = roomInfo.player
-    //     rooms.push(this);
-    // }
+    function Room(roomInfo){
+        this.description = roomInfo.description;
+        this.items   = roomInfo.items;
+        this.monster = roomInfo.monster;
+        this.player  = roomInfo.player
+        rooms.push(this);
+    }
 
     // ES6 Syntax
-    class Room {
-        constructor(roomInfo){
-            this.description = roomInfo.description;
-            this.items   = roomInfo.items;
-            this.monster = roomInfo.monster;
-            this.player  = roomInfo.player
-            rooms.push(this);
-        }
-    }
+    // class Room {
+    //     constructor(roomInfo){
+    //         this.description = roomInfo.description;
+    //         this.items   = roomInfo.items;
+    //         this.monster = roomInfo.monster;
+    //         this.player  = roomInfo.player
+    //         rooms.push(this);
+    //     }
+    // }
 
     // You Could Optionally Generate Seed Data!
     // new Monster()
