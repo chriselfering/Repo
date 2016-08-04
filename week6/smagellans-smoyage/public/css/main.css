@@ -2,8 +2,9 @@ body {
 	background-color: antiquewhite;
 }
 
-nextButton {
+.nextButton {
 	background-color: chartreuse;
 	padding: 10px 20px;
 	border: 1px solid black;
+	border-radius: 20px;
 }
